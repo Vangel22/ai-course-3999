@@ -1,0 +1,2 @@
+1. Postavete ja istata struktura
+2. Postavete go kodot na vase Github repo
