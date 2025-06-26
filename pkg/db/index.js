@@ -5,6 +5,11 @@ const DB = process.env.DATABASE.replace(
   process.env.DATABASE_PASSWORD
 );
 
+// ENVIRONMENT VARIABLES in config.env:
+// PORT
+// DATABASE
+// DATABASE_PASSWORD
+
 exports.init = async () => {
   try {
     await mongoose.connect(DB);

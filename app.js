@@ -8,6 +8,8 @@ const db = require("./pkg/db/index");
 
 db.init();
 
+// npm i express dotenv mongoose cors
+
 const app = express();
 
 app.use(cors());
