@@ -1,0 +1,17 @@
+### Домашна
+
+Правење на soil model
+
+1. name
+2. type
+3. ph
+4. humus
+5. texture
+6. color
+7. location
+8. seaLevel
+9. characteristics
+10. culture
+11. dateOfCreation
+
+* Bonus - razmislete sto moze da se dodade kako pole vo ovoj mongoose model
