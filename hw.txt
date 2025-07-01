@@ -1,4 +1,4 @@
-### Домашна
+### Домашна 1
 
 Правење на soil model
 
@@ -15,3 +15,10 @@
 11. dateOfCreation
 
 * Bonus - razmislete sto moze da se dodade kako pole vo ovoj mongoose model
+
+### Домашна 2
+
+1. Logiranje na korisnikot
+2. Zacuvajte gi podatocite vo localStorage
+3. Navigirajte go korisnikot na Homepage po uspesna najava, vo sprotivno pokazete greska na UI
+4. Napravete dizajn za celiot ekran
