@@ -7,3 +7,13 @@ Task 2
 2. Da napravite pkg/db/index za da ja inicirate vasata databaza
 3. Implementacija vo infrastrukturniot kod t.e app.js
 4. Uspesno startuvanje na izbranata porta i vasata databaza
+
+============================================================================================
+
+Task 3
+
+1. Iskopirajte gi soil kontrolerot i modelot
+2. Iskopirajte gi ai kontrolerite
+3. Podesete gi rutite vo app.js
+4. config.env treba da go dodadete vasiot api kluc: COHERE_API_KEY=ejzYpNV3stps1AhKiSwAe8NIfa2M0tzuVNl2TdMl
+5. Izvrsete gi addSample i getSoils
