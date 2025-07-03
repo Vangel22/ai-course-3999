@@ -22,3 +22,11 @@
 2. Zacuvajte gi podatocite vo localStorage
 3. Navigirajte go korisnikot na Homepage po uspesna najava, vo sprotivno pokazete greska na UI
 4. Napravete dizajn za celiot ekran
+
+
+### Домашна 3
+
+1. Имплементирајте го екранот Soils каде ќе се прикажат сите почви кои ги имаме во база
+2. Рута: /api/v1/soil
+3. Дизајнирајте го екранот
+
