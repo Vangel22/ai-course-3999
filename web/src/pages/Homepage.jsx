@@ -1,4 +1,5 @@
 import { jwtDecode } from "jwt-decode";
+import style from "../styles/Homepage.module.css";
 
 function getEmailFromToken() {
   const token = localStorage.getItem("token");
@@ -16,24 +17,21 @@ export const Homepage = () => {
   // TODO: Make this in English
   // TODO: Make this with custom design
 
-  // Boi:
-  // Pozadina: #151618
-  // Kontejner: #252628
-
   return (
-    <div style={{ maxWidth: 600, margin: "2rem auto", textAlign: "center" }}>
+    <div className={style.container}>
       <h3 style={{ fontWeight: "bold", color: "lightblue" }}>
-        Најавен гостин: {email}
+        Logged guest: {email}
       </h3>
-      <h1>Добредојдовте на првата апликацијата за почни во Македонија! </h1>
-      <h2>Станетте дел од земјделците во нашата држава</h2>
+      <h1>Welcome to the first app for soils in Macedonia!</h1>
+
+      <h2>Become part of the farmers in our country</h2>
       <p>
-        Оваа апликација ни овозможува да прегледуваме информации за
-        земјоделските работи, и сите потребни информации може да ги најдите тука
+        This application allows us to view information about agricultural
+        activities, and all the necessary information can be found here.
       </p>
       <p>
-        За домашна да го збогатите менито со почва, земјдолески култури,
-        ѓубрива, механизација
+        For your home, enrich the menu with soil, agricultural crops,
+        fertilizers, and mechanization.
       </p>
     </div>
   );

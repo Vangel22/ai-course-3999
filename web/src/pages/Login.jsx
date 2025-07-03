@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
+import "../styles/Login.css";
+
 export const Login = () => {
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
@@ -31,9 +33,9 @@ export const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <label>Email</label>
         <input
           type="email"
