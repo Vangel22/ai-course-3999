@@ -17,3 +17,4 @@ Task 3
 3. Podesete gi rutite vo app.js
 4. config.env treba da go dodadete vasiot api kluc: COHERE_API_KEY=ejzYpNV3stps1AhKiSwAe8NIfa2M0tzuVNl2TdMl
 5. Izvrsete gi addSample i getSoils
+

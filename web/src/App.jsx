@@ -3,6 +3,10 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 
 import { Error } from "./pages/Error";
 import Root from "./Root";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { Homepage } from "./pages/Homepage";
+import { SoilChat } from "./pages/SoilChat";
+import { Login } from "./pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +16,14 @@ const router = createBrowserRouter([
     children: [
       {
         path: "login",
-        element: <h1>Login</h1>,
+        element: <Login />,
+      },
+      {
+        element: <ProtectedRoute />,
+        children: [
+          { index: true, element: <Homepage /> },
+          { path: "/soil-chat", element: <SoilChat /> },
+        ],
       },
     ],
   },

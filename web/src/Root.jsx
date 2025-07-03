@@ -21,6 +21,9 @@ function Root() {
             <Link to="/soil-chat" style={{ marginRight: "1rem" }}>
               Chat
             </Link>
+            <button onClick={handleLogout} style={{ marginRight: "1rem" }}>
+              Logout
+            </button>
           </>
         )}
 
@@ -28,12 +31,6 @@ function Root() {
           <Link to="/login" style={{ marginRight: "1rem" }}>
             Login
           </Link>
-        )}
-
-        {isLoggedIn && (
-          <button onClick={handleLogout} style={{ marginRight: "1rem" }}>
-            Logout
-          </button>
         )}
       </nav>
       <main style={{ padding: "1rem" }}>
