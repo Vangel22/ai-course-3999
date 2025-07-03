@@ -6,7 +6,8 @@ function getEmailFromToken() {
 
   const decoded = jwtDecode(token);
   console.log(decoded);
-  return decoded.email || null;
+  // Ako decoded.email ne postoi ke se vrati null
+  return decoded?.email;
 }
 
 export const Homepage = () => {
