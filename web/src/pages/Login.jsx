@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 import "../styles/Login.css";
+import { decodeToken } from "react-jwt";
 
 export const Login = () => {
   const [error, setError] = useState("");
@@ -22,7 +23,12 @@ export const Login = () => {
 
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
-        navigate("/");
+        const decoded = decodeToken(res.data.token);
+        if (decoded.role === "admin") {
+          navigate("/users");
+        } else {
+          navigate("/");
+        }
       } else {
         setError(res.data.error || "Login error!");
       }

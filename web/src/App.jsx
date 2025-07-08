@@ -19,16 +19,13 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
-      // {
-      //   element: <ProtectedRoute />,
-      //   children: [
-      //     { index: true, element: <Homepage /> },
-      //     { path: "/soil-chat", element: <SoilChat /> },
-      //   ],
-      // },
       {
-        element: <ProtectedRoute requiredRole="admin" />,
-        children: [{ path: "/users", element: <Users /> }],
+        element: <ProtectedRoute />,
+        children: [
+          { index: true, element: <Homepage /> },
+          { path: "/soil-chat", element: <SoilChat /> },
+          { path: "/users", element: <Users /> },
+        ],
       },
     ],
   },

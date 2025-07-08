@@ -1,19 +1,12 @@
-import { decodeToken, isExpired } from "react-jwt";
+import { isExpired } from "react-jwt";
 import { Navigate, Outlet } from "react-router";
 
-export default function ProtectedRoute({ requiredRole = "admin" }) {
-  console.log("required role", requiredRole);
-
+export default function ProtectedRoute() {
   const token = localStorage.getItem("token");
 
   if (!token || isExpired(token)) {
+    console.log("Token missing or expired");
     return <Navigate to="/login" replace />;
-  }
-
-  const decoded = decodeToken(token);
-
-  if (requiredRole && decoded?.role !== requiredRole) {
-    return <Navigate to="/users" replace />;
   }
 
   return <Outlet />;

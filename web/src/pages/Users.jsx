@@ -28,12 +28,22 @@ export const Users = () => {
   // Columns: Name, Email, Role
 
   return (
-    <div
-      style={{
-        backgroundColor: "red",
-      }}
-    >
+    <div>
       <h1>Users</h1>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+        {users.map((user) => (
+          <tr>
+            <td>{user.name}</td>
+            <td>{user.email}</td>
+            <td>{user.role}</td>
+          </tr>
+        ))}
+      </table>
     </div>
   );
 };

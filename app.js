@@ -25,6 +25,9 @@ app.use(
   expressjwt({
     algorithms: ["HS256"],
     secret: process.env.JWT_SECRET,
+  }).unless({
+    path: "/api/v1/signup",
+    path: "/api/v1/login",
   })
 );
 
