@@ -14,16 +14,17 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <Error />,
     children: [
+      { path: "login", element: <Login /> },
       {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        element: <ProtectedRoute />,
+        element: <ProtectedRoute />, // For general authenticated users
         children: [
           { index: true, element: <Homepage /> },
           { path: "/soil-chat", element: <SoilChat /> },
         ],
+      },
+      {
+        element: <ProtectedRoute requiredRole="admin" />, // Admin-only
+        children: [{ path: "/users", element: <Users /> }],
       },
     ],
   },

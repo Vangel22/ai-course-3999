@@ -1,17 +1,18 @@
-import { isExpired } from "react-jwt";
 import { Navigate, Outlet } from "react-router";
+import { isExpired, decodeToken } from "react-jwt";
 
-const isAuthenticated = () => {
+export default function ProtectedRoute({ requiredRole }) {
   const token = localStorage.getItem("token");
-  if (!token) return false;
-  if (isExpired(token)) {
+
+  if (!token || isExpired(token)) {
     localStorage.removeItem("token");
-    return false;
+    return <Navigate to="/login" replace />;
   }
 
-  return true;
-};
+  const decoded = decodeToken(token);
+  if (requiredRole && decoded?.role !== requiredRole) {
+    return <Navigate to="/" replace />;
+  }
 
-export default function ProtectedRoute() {
-  return isAuthenticated() ? <Outlet /> : <Navigate to="/login" replace />;
+  return <Outlet />;
 }
