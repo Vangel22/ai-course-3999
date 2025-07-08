@@ -7,6 +7,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { Homepage } from "./pages/Homepage";
 import { SoilChat } from "./pages/SoilChat";
 import { Login } from "./pages/Login";
+import { Users } from "./pages/Users";
 
 const router = createBrowserRouter([
   {
@@ -18,12 +19,16 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
+      // {
+      //   element: <ProtectedRoute />,
+      //   children: [
+      //     { index: true, element: <Homepage /> },
+      //     { path: "/soil-chat", element: <SoilChat /> },
+      //   ],
+      // },
       {
-        element: <ProtectedRoute />,
-        children: [
-          { index: true, element: <Homepage /> },
-          { path: "/soil-chat", element: <SoilChat /> },
-        ],
+        element: <ProtectedRoute requiredRole="admin" />,
+        children: [{ path: "/users", element: <Users /> }],
       },
     ],
   },

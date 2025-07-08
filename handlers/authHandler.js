@@ -5,12 +5,13 @@ const jwt = require("jsonwebtoken");
 // registracija
 exports.signup = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
 
     const newUser = await User.create({
       name: name,
       email,
       password,
+      role,
     });
 
     return res.status(201).json({
